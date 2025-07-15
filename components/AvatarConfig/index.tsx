@@ -59,6 +59,7 @@ export const AvatarConfig: React.FC<AvatarConfigProps> = ({
           placeholder="Enter custom knowledge base ID"
           value={config.knowledgeId}
           onChange={(value) => onChange("knowledgeId", value)}
+          className="text-2xl py-4 px-8 h-16"
         />
       </Field>
       <Field label="Avatar ID">
@@ -128,7 +129,7 @@ export const AvatarConfig: React.FC<AvatarConfigProps> = ({
       </Field>
       {showMore && (
         <>
-          <h1 className="text-zinc-100 w-full text-center mt-5">
+          <h1 className="text-gray-800 w-full text-center mt-5">
             Voice Settings
           </h1>
           <Field label="Custom Voice ID">
@@ -162,7 +163,7 @@ export const AvatarConfig: React.FC<AvatarConfigProps> = ({
               }
             />
           </Field>
-          <h1 className="text-zinc-100 w-full text-center mt-5">
+          <h1 className="text-gray-800 w-full text-center mt-5">
             STT Settings
           </h1>
           <Field label="Provider">
@@ -182,7 +183,7 @@ export const AvatarConfig: React.FC<AvatarConfigProps> = ({
         </>
       )}
       <button
-        className="text-zinc-400 text-sm cursor-pointer w-full text-center bg-transparent"
+        className="text-[#666] hover:text-[#f0ad4e] text-sm cursor-pointer w-full text-center bg-transparent transition-colors duration-200"
         onClick={() => setShowMore(!showMore)}
       >
         {showMore ? "Show less" : "Show more..."}

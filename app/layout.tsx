@@ -16,8 +16,8 @@ const fontMono = FontMono({
 
 export const metadata: Metadata = {
   title: {
-    default: "HeyGen Interactive Avatar SDK Demo",
-    template: `%s - HeyGen Interactive Avatar SDK Demo`,
+    default: "WeThink Things - Interactive Solutions",
+    template: `%s - WeThink Things`,
   },
   icons: {
     icon: "/heygen-logo.png",
@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="en"
     >
       <head />
-      <body className="min-h-screen bg-black text-white">
+      <body className="min-h-screen bg-white text-gray-800">
         <main className="relative flex flex-col gap-6 h-screen w-screen">
           <NavBar />
           {children}

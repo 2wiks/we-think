@@ -2,56 +2,35 @@
 
 import Link from "next/link";
 
-import { GithubIcon, HeyGenLogo } from "./Icons";
+import { GithubIcon } from "./Icons";
 
 export default function NavBar() {
   return (
     <>
-      <div className="flex flex-row justify-between items-center w-[1000px] m-auto p-6">
+      <div className="flex flex-row justify-center items-center w-[1000px] m-auto p-8">
         <div className="flex flex-row items-center gap-4">
-          <Link href="https://app.heygen.com/" target="_blank">
-            <HeyGenLogo />
-          </Link>
-          <div className="bg-gradient-to-br from-sky-300 to-indigo-500 bg-clip-text">
-            <p className="text-xl font-semibold text-transparent">
-              HeyGen Interactive Avatar SDK NextJS Demo
-            </p>
+          {/* WeThink Logo */}
+          <div className="flex flex-col items-start">
+            {/* Logo Dots */}
+            <div className="flex gap-1 mb-1">
+              <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+              <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+              <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+            </div>
+            {/* Logo Text */}
+            <div className="flex items-baseline">
+              <span className="text-3xl font-bold text-[#F06250]">We</span>
+              <span className="text-3xl font-bold text-[#6A0DAD] relative">
+                Think
+                <span className="text-xl ml-1 relative -top-3">💡</span>
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-row items-center gap-6">
-          <Link
-            href="https://labs.heygen.com/interactive-avatar"
-            target="_blank"
-          >
-            Avatars
-          </Link>
-          <Link
-            href="https://docs.heygen.com/reference/list-voices-v2"
-            target="_blank"
-          >
-            Voices
-          </Link>
-          <Link
-            href="https://docs.heygen.com/reference/new-session-copy"
-            target="_blank"
-          >
-            API Docs
-          </Link>
-          <Link
-            href="https://help.heygen.com/en/articles/9182113-interactive-avatar-101-your-ultimate-guide"
-            target="_blank"
-          >
-            Guide
-          </Link>
-          <Link
-            aria-label="Github"
-            className="flex flex-row justify-center gap-1 text-foreground"
-            href="https://github.com/HeyGen-Official/StreamingAvatarSDK"
-            target="_blank"
-          >
-            <GithubIcon className="text-default-500" />
-            SDK
-          </Link>
+          {/* Brand Text */}
+          <div className="flex flex-col">
+            <span className="text-2xl font-bold text-gray-800">WeThink</span>
+            <span className="text-base font-medium text-[#f0ad4e] uppercase tracking-wide">Things</span>
+          </div>
         </div>
       </div>
     </>
