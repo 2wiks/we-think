@@ -123,20 +123,20 @@ function InteractiveAvatar() {
   }, [mediaStream, stream]);
 
   return (
-    <div className="w-full flex flex-col gap-8">
-      <div className="flex flex-col rounded-2xl bg-white border-2 border-[#f0ad4e] shadow-2xl overflow-hidden">
-        <div className="relative w-full aspect-video overflow-hidden flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-white">
+    <div className="w-full flex flex-col gap-6">
+      <div className="flex flex-col rounded-xl bg-white border border-[#f0ad4e]/30 shadow-lg overflow-hidden">
+        <div className="relative w-full aspect-[4/3] overflow-hidden flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-white">
           {sessionState !== StreamingAvatarSessionState.INACTIVE ? (
             <AvatarVideo ref={mediaStream} />
           ) : (
             <AvatarConfig config={config} onConfigChange={setConfig} />
           )}
         </div>
-        <div className="flex flex-col gap-6 items-center justify-center p-8 border-t-2 border-[#f0ad4e] w-full bg-gradient-to-r from-[#f0ad4e]/10 to-[#6A0DAD]/10">
+        <div className="flex flex-col gap-4 items-center justify-center p-6 border-t border-[#f0ad4e]/20 w-full bg-gradient-to-r from-[#f0ad4e]/5 to-[#6A0DAD]/5">
           {sessionState === StreamingAvatarSessionState.CONNECTED ? (
             <AvatarControls />
           ) : sessionState === StreamingAvatarSessionState.INACTIVE ? (
-            <div className="flex flex-row gap-6">
+            <div className="flex flex-row gap-4">
               <Button onClick={() => startSessionV2(true)}>
                 Start Voice Chat
               </Button>

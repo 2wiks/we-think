@@ -3,9 +3,9 @@
 import InteractiveAvatar from "@/components/InteractiveAvatar";
 export default function App() {
   return (
-    <div className="w-screen h-screen flex flex-col">
-      <div className="w-[1200px] flex flex-col items-start justify-start gap-8 mx-auto pt-8 pb-32 px-8">
-        <div className="w-full">
+    <div className="w-screen h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
+      <div className="w-[1100px] flex flex-col items-center justify-start gap-6 mx-auto pt-6 pb-16 px-6">
+        <div className="w-full max-w-4xl">
           <InteractiveAvatar />
         </div>
       </div>

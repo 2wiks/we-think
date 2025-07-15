@@ -7,7 +7,7 @@ import { GithubIcon } from "./Icons";
 export default function NavBar() {
   return (
     <>
-      <div className="flex flex-row justify-center items-center w-[1000px] m-auto p-8">
+      <div className="flex flex-row justify-center items-center w-[1000px] m-auto p-6">
         <div className="flex flex-row items-center gap-4">
           {/* WeThink Logo */}
           <div className="flex flex-col items-start">
