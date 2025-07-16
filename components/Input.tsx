@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 
 interface InputProps {
   value: string | undefined | null;
@@ -17,4 +18,14 @@ export const Input = (props: InputProps) => {
       onChange={(e) => props.onChange(e.target.value)}
     />
   );
+};
+
+export const metadata: Metadata = {
+  title: {
+    default: "WeThink Things - Interactive Solutions",
+    template: `%s - WeThink Things`,
+  },
+  icons: {
+    icon: "/favicon.png", // <-- update this line
+  },
 };

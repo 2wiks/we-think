@@ -22,29 +22,34 @@ export function Select<T>(props: SelectProps<T>) {
       open={isOpen}
       onOpenChange={setIsOpen}
     >
-      <SelectPrimitive.Trigger className="w-full text-white text-lg bg-zinc-700 py-3 px-6 rounded-lg cursor-pointer fhlex items-center justify-between h-fit disabled:opacity-50 min-h-[48px]">
-        <div className={`${props.value ? "text-white" : "text-zinc-400"} text-lg`}>
+      <SelectPrimitive.Trigger
+        className="w-full text-white text-base bg-zinc-700 px-4 py-2 rounded-lg cursor-pointer flex items-center justify-between min-h-[40px] max-h-[44px] h-[42px] disabled:opacity-50 border border-[#6A0DAD]/30 transition-all duration-200"
+      >
+        <div className={`${props.value ? "text-white" : "text-zinc-400"} text-base`}
+          style={{ fontSize: 16 }}
+        >
           {props.value ? props.value : props.placeholder}
         </div>
-        <ChevronDownIcon className="w-5 h-5" />
+        <ChevronDownIcon className="w-4 h-4 ml-2 transition-transform duration-200" />
       </SelectPrimitive.Trigger>
 
       <SelectPrimitive.Portal>
         <SelectPrimitive.Content
-          className="z-50 w-[var(--radix-select-trigger-width)] max-h-[350px] overflow-y-auto"
+          className="z-50 w-[var(--radix-select-trigger-width)] max-h-[300px] overflow-y-auto"
           position="popper"
           sideOffset={6}
         >
-          <SelectPrimitive.Viewport className="rounded-lg border-2 border-[#f0ad4e] bg-white shadow-xl py-1">
+          <SelectPrimitive.Viewport className="rounded-lg border border-[#f0ad4e] bg-zinc-800 shadow-xl py-1">
             {props.options.map((option) => {
               const isSelected = props.isSelected(option);
 
               return (
                 <div
                   key={props.renderOption(option)?.toString()}
-                  className={`py-3 px-6 cursor-pointer hover:bg-[#f0ad4e]/20 outline-none text-base rounded-md transition-colors duration-150 ${
-                    isSelected ? "text-[#222] bg-[#f0ad4e]/40 font-semibold" : "text-[#666]"
+                  className={`px-4 py-2 cursor-pointer hover:bg-[#f0ad4e]/20 outline-none text-base rounded-md transition-colors duration-150 ${
+                    isSelected ? "text-[#222] bg-[#f0ad4e]/40 font-semibold" : "text-[#ccc]"
                   }`}
+                  style={{ height: 40, fontSize: 16 }}
                   onClick={() => {
                     props.onSelect(option);
                     setIsOpen(false);
