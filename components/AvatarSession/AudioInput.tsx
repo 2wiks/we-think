@@ -4,11 +4,13 @@ import { useVoiceChat } from "../logic/useVoiceChat";
 import { Button } from "../Button";
 import { LoadingIcon, MicIcon, MicOffIcon } from "../Icons";
 import { useConversationState } from "../logic/useConversationState";
+import { useInterrupt } from "../logic/useInterrupt";
 
 export const AudioInput: React.FC = () => {
   const { muteInputAudio, unmuteInputAudio, isMuted, isVoiceChatLoading } =
     useVoiceChat();
   const { isUserTalking } = useConversationState();
+  const { interrupt } = useInterrupt();
 
   const handleMuteClick = () => {
     if (isMuted) {
@@ -19,7 +21,7 @@ export const AudioInput: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="flex items-center gap-2">
       <Button
         className={`!p-2 relative`}
         disabled={isVoiceChatLoading}
@@ -35,6 +37,13 @@ export const AudioInput: React.FC = () => {
         ) : (
           <MicIcon size={20} />
         )}
+      </Button>
+      
+      <Button 
+        className="!p-2" 
+        onClick={interrupt}
+      >
+        Interrupt
       </Button>
     </div>
   );

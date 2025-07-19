@@ -3,7 +3,6 @@ import React from "react";
 
 import { useVoiceChat } from "../logic/useVoiceChat";
 import { Button } from "../Button";
-import { useInterrupt } from "../logic/useInterrupt";
 
 import { AudioInput } from "./AudioInput";
 import { TextInput } from "./TextInput";
@@ -15,7 +14,7 @@ export const AvatarControls: React.FC = () => {
     startVoiceChat,
     stopVoiceChat,
   } = useVoiceChat();
-  const { interrupt } = useInterrupt();
+
 
   return (
     <div className="flex flex-col gap-3 relative w-full items-center">
@@ -50,11 +49,6 @@ export const AvatarControls: React.FC = () => {
         </ToggleGroupItem>
       </ToggleGroup>
       {isVoiceChatActive || isVoiceChatLoading ? <AudioInput /> : <TextInput />}
-      <div className="absolute top-[-70px] right-3">
-        <Button className="!bg-gradient-to-r !from-red-600 !via-red-500 !to-red-700 !text-white !border-red-400/50" onClick={interrupt}>
-          Interrupt
-        </Button>
-      </div>
     </div>
   );
 };
