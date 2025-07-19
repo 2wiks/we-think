@@ -129,7 +129,7 @@ export const AvatarConfig: React.FC<AvatarConfigProps> = ({
       </Field>
       {showMore && (
         <>
-          <h1 className="text-gray-800 w-full text-center mt-5">
+          <h1 className="text-white w-full text-center mt-5">
             Voice Settings
           </h1>
           <Field label="Custom Voice ID">
@@ -163,7 +163,7 @@ export const AvatarConfig: React.FC<AvatarConfigProps> = ({
               }
             />
           </Field>
-          <h1 className="text-gray-800 w-full text-center mt-5">
+          <h1 className="text-white w-full text-center mt-5">
             STT Settings
           </h1>
           <Field label="Provider">
@@ -183,7 +183,7 @@ export const AvatarConfig: React.FC<AvatarConfigProps> = ({
         </>
       )}
       <button
-        className="text-[#666] hover:text-[#f0ad4e] text-sm cursor-pointer w-full text-center bg-transparent transition-colors duration-200"
+        className="text-gray-300 hover:text-[#F06250] text-sm cursor-pointer w-full text-center bg-transparent transition-colors duration-200"
         onClick={() => setShowMore(!showMore)}
       >
         {showMore ? "Show less" : "Show more..."}

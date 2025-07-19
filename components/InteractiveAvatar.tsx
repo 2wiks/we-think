@@ -25,7 +25,7 @@ import { AVATARS } from "@/app/lib/constants";
 const DEFAULT_CONFIG: StartAvatarRequest = {
   quality: AvatarQuality.Low,
   avatarName: AVATARS[0].avatar_id,
-  knowledgeId: undefined,
+  knowledgeId: "740792a430134efba581bd6c489312af",
   voice: {
     rate: 1.5,
     emotion: VoiceEmotion.EXCITED,
@@ -122,17 +122,29 @@ function InteractiveAvatar() {
     }
   }, [mediaStream, stream]);
 
+  // Auto-start voice chat when component mounts
+  useEffect(() => {
+    const autoStartVoiceChat = async () => {
+      // Small delay to ensure everything is initialized
+      setTimeout(() => {
+        startSessionV2(true);
+      }, 1000);
+    };
+    
+    autoStartVoiceChat();
+  }, []); // Empty dependency array means this runs once when component mounts
+
   return (
     <div className="w-full flex flex-col gap-6">
-      <div className="flex flex-col rounded-xl bg-white border border-[#f0ad4e]/30 shadow-lg overflow-hidden">
-        <div className="relative w-full aspect-[4/3] overflow-hidden flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-white">
+      <div className="flex flex-col rounded-xl bg-[#002856] border border-[#F06250]/40 shadow-lg overflow-hidden">
+        <div className="relative w-full aspect-[4/3] overflow-hidden flex flex-col items-center justify-center bg-[#002856]">
           {sessionState !== StreamingAvatarSessionState.INACTIVE ? (
             <AvatarVideo ref={mediaStream} />
           ) : (
             <AvatarConfig config={config} onConfigChange={setConfig} />
           )}
         </div>
-        <div className="flex flex-col gap-4 items-center justify-center p-6 border-t border-[#f0ad4e]/20 w-full bg-gradient-to-r from-[#f0ad4e]/5 to-[#6A0DAD]/5">
+        <div className="flex flex-col gap-4 items-center justify-center p-6 border-t border-[#F06250]/30 w-full bg-[#002856]">
           {sessionState === StreamingAvatarSessionState.CONNECTED ? (
             <AvatarControls />
           ) : sessionState === StreamingAvatarSessionState.INACTIVE ? (

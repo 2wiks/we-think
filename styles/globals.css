@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background-color: #002856;
+}
+
+body {
+  background-color: #002856;
+}
+
 /* Hide scrollbar but keep scroll functionality */
 html {
   scrollbar-width: none; /* Firefox */
